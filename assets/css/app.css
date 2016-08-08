@@ -1,0 +1,102 @@
+html, body {
+  font-family: 'Roboto', sans-serif;
+  font-size:14px;
+  height:100%;
+  margin: 0px;
+  padding: 0px;
+}
+
+.md-button {    
+    text-transform: capitalize !important;/*For Lower case use lowercase*/
+}
+
+.md-button a {
+	color: inherit;
+    text-decoration: none;
+}
+
+/* Sidenav */
+md-sidenav,
+md-sidenav.md-locked-open-add-active,
+md-sidenav.md-closed.md-locked-open-add-active,
+md-sidenav.md-locked-open {
+  width: 200px;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+md-sidenav {
+  fill: #737373;
+}
+
+md-sidenav md-list-item > .md-button {
+  width:100%;
+  text-align:left !important;
+  font-weight: 400;
+}
+
+md-sidenav md-list-item > .unselected,
+md-sidenav md-list-item > .unselected > ng-md-icon {
+  color: black;
+  fill: black;
+}
+
+md-sidenav md-list-item > .selected,
+md-sidenav md-list-item > .selected > ng-md-icon {
+  color: #03a9f4;
+  fill: #03a9f4;
+}
+
+md-sidenav  md-list {
+  padding: 0px 0px 8px 0px;
+}
+
+
+/* Primary content area */
+
+.profile-pic {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  display: inline-block;
+  overflow: hidden;
+  margin: -20px -20px;
+  vertical-align: middle;
+  zoom:0.70;
+  transform: translateZ(0);
+  -webkit-transform: scale(0.70);
+  -moz-transform:scale(0.70);
+}
+
+.tight {
+	margin: 0px; 
+	padding: 0px;
+}
+
+p a, table a, div a {
+  color: #1A237E;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+
+md-whiteframe {
+    background: white;
+}
+ 
+md-body-1 {
+    margin-top: 8px;
+}
+    
+/*Helpers*/
+
+.centered {
+    text-align: center;
+}

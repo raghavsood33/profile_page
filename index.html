@@ -1,0 +1,142 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+    <head>
+        <title>Raghav Sood</title>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <meta name="description" content="">
+        <meta name="keyword" content="Raghav Sood, DSL, IISc Bangalore, AppyFest">
+
+        <link rel="icon" type="image/png" href="assets/images/IISc_icon.png">
+
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.css">
+
+        <!-- Your Application css -->
+        <link rel="stylesheet" href="assets/css/app.css">
+
+        <style type="text/css">
+        /* Hide when Angular is not yet loaded and initialized */
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+        </style>
+    </head>
+
+    <body ng-app="DashboardApp" layout="column" ng-controller="DashboardController as dc" ng-cloak>
+
+        <!-- header banner start -->
+        <md-toolbar layout="row" layout-wrap layout-align="space-between center" style="padding: 5px 0px">
+
+        <div layout="row" flex-xs="100" flex="50" layout-align="start center">
+            <md-button class="menu tight" hide-gt-xs ng-click="dc.toggleSidenav()" aria-label="Show Sidenav">
+                <ng-md-icon icon="menu" style="fill: black" size="24"></ng-md-icon>
+            </md-button>
+
+            <md-button class="md-button tight" ng-href="http://dsl.cds.iisc.ac.in/" aria-label="Database Systems Lab">
+                <img src="assets/images/dsl.png" style="margin: 4px" />
+            </md-button>
+
+            <span class="md-headline">Raghav Sood</span>
+
+            <div flex></div>
+        </div>
+
+        <div layout="row" flex-xs="100" flex="50" layout-align="end center">
+            <div flex></div>
+        </div>
+
+        </md-toolbar>
+        <!-- header end -->
+
+
+        <div flex layout="row">
+            <!-- sidenav start -->
+            <md-sidenav ng-click="ul.toggleList()" md-is-locked-open="$mdMedia('gt-xs')" md-component-id="left" class="md-whiteframe-z2" >
+
+                <a href="http://dsl.cds.iisc.ac.in/~raghav/"><img src="assets/images/me.jpg"></a>
+
+                <md-list>
+                    <md-list-item ng-repeat="item in dc.festSideMenu">
+                        <md-button ng-class="item.title == dc.festSideMenuSelTitle ? 'selected' : 'unselected'">
+                            <a href="{{item.link}}" layout="row" layout-align="start center">
+                                <span class="inset"><ng-md-icon icon="{{item.icon}}"></ng-md-icon></span>
+                                <span>{{item.title}}</span>
+                            </a>
+                        </md-button>
+                    </md-list-item>
+                    <md-divider></md-divider>
+                    <md-subheader>Liked the page?</md-subheader>
+                    <md-list-item ng-repeat="item in dc.festSubSideMenu">
+                        <md-button ng-class="item.title == dc.festSideMenuSelTitle ? 'selected' : 'unselected'">
+                            <a href="{{item.link}}" layout="row" layout-align="start center">
+                                <span class="inset"><ng-md-icon icon="{{item.icon}}"></ng-md-icon></span>
+                                <span>{{item.title}}</span>
+                            </a>
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </md-sidenav>
+            <!-- sidenav end -->
+
+            <md-content ui-view id="content" flex>
+            <!-- content start -->
+            
+            <ng-include src="'assets/components/aboutme.html'"></ng-include>
+            <ng-include src="'assets/components/education.html'"></ng-include>
+            <ng-include src="'assets/components/workex.html'"></ng-include>
+            <ng-include src="'assets/components/publications.html'"></ng-include>
+            <ng-include src="'assets/components/projects.html'"></ng-include>
+            <ng-include src="'assets/components/startups.html'"></ng-include>
+            <ng-include src="'assets/components/workstation.html'"></ng-include>
+            <ng-include src="'assets/components/catchme.html'"></ng-include>
+            <ng-include src="'assets/components/getsource.html'"></ng-include>
+            
+
+            <!-- content end -->
+            </md-content>
+
+        </div>
+
+        <div class="md-caption footer">
+            <span>
+            <!-- hitwebcounter 
+            Unique visitors: <img style="margin-bottom: -4px; height: 15px" src="http://hitwebcounter.com/counter/counter.php?page=6448148&style=0006&nbdigits=5&type=ip&initCount=0" title="hitwebcounter.com" border="0">
+             -->
+            </span>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <span>Last updated on: August 8, 2016</span>
+        </div>
+
+        <!-- jquery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        <!-- Angular Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-beta.1/angular-ui-router.min.js"></script>
+        <script src="assets/js/routeToComponent.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-sanitize.min.js"></script>
+
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-aria.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-messages.min.js"></script>
+
+        <!-- Angular Material Library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc4/angular-material.min.js"></script>
+
+        <!-- Angular Material Icons- https://klarsys.github.io/angular-material-icons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.7.0/angular-material-icons.min.js"></script>
+
+        <!-- Your application js  -->
+        <script src="assets/js/dashboardController.js"></script>
+        <script src="assets/js/dashboardService.js"></script>
+
+
+    </body>
+</html>
